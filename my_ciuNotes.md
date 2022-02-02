@@ -1,5 +1,5 @@
 # CODING INTERVIEW UNIVERSITY NOTES
-### Big O Notation
+## Big O Notation
 https://www.youtube.com/watch?v=iOq5kSKqeR4
 
 - O(n) >> the time required to count characters in a string is linear
@@ -9,7 +9,7 @@ https://www.youtube.com/watch?v=iOq5kSKqeR4
 	+ given an array size 3, [1,2,3], if our wanted term is 1 then our program runs in OMEGA(1); if our wanted term is 3, then our program runs in OMEGA(N) (where N represented the length of the array)
 - THETA >> best and worst cases are the same
 
-### Quick Tutorial Video
+## Quick Tutorial Video
 https://www.youtube.com/watch?v=V6mKVRU1evU
 
 - A way to measure how well a computer algorithm scales as the amount of data involved increases.
@@ -26,7 +26,7 @@ https://www.youtube.com/watch?v=V6mKVRU1evU
 ...
 
 
-### Omega and Theta
+## Omega and Theta
 https://www.youtube.com/watch?v=ei-A_wy5Yxw
 
 - Mathematical Description -
@@ -47,7 +47,7 @@ https://www.youtube.com/watch?v=ei-A_wy5Yxw
 ...
 
 
-### Asymptotic Notation
+## Asymptotic Notation
 https://www.youtube.com/watch?v=gSyDMtdPNpU
 
 - the knapsack problem >> given a problem, a solution may work sometimes and not others and a broken solution may work in different cases
@@ -64,12 +64,12 @@ https://www.youtube.com/watch?v=gSyDMtdPNpU
 - a function multiplied by a constant doesnt change its asymptotics
 
 
-### Asymptotic Analysis
+## Asymptotic Analysis
 https://archive.org/details/ucberkeley_webcast_VIS4YDpuP98
 
 - asymptotic analysis - the study of how algorithms behave as the size of the data grows very large or to infinity
 
-## Big Oh Notation is used to represent upper bounds of a function
+### Big Oh Notation is used to represent upper bounds of a function
 - let n be the size of programs INPUT
 - let T(n) be a function e.g. running time
 - let f(n) be another function, preferable simple
@@ -79,7 +79,7 @@ https://archive.org/details/ucberkeley_webcast_VIS4YDpuP98
 	+ N is the place where the vertical line is drawn for the proof
 	+ Big O notation doesn't care about (most) constant factors >> unnecessary to write O(2n)
 - Big O notation is usually used to indicate dominating (fastest-growing) term
-## Table of Important Big O Sets
+### Table of Important Big O Sets
 - smallest to largest >>
 ----------------------------------------
 	FUNCTION   |   COMMON NAME
@@ -97,7 +97,7 @@ https://archive.org/details/ucberkeley_webcast_VIS4YDpuP98
 	3. ...
 	4. Big O notation doesn't always tell the whole story
 
-### Amortized Analysis
+## Amortized Analysis
 https://www.youtube.com/watch?v=B3SpQZaAZP4
 
 - opening a duncan donuts >> franchise cost $1,000,000 and cost per donut $1
@@ -109,7 +109,7 @@ https://www.youtube.com/watch?v=B3SpQZaAZP4
 	+ every even increment of the binary counter is 1
 	+ we always bring some number of people home and send one guy up with a roundtrip ticket (see binary counter example about cost to increment)
 
-### Computational Complexity
+## Computational Complexity
 https://www.topcoder.com/community/competitive-programming/tutorials/computational-complexity-section-1/
 
 - questions to answer before starting to code: 
