@@ -99,3 +99,17 @@ https://www.youtube.com/watch?v=B3SpQZaAZP4
 	+ k = 4 bits >> O(nk)?
 	+ every even increment of the binary counter is 1
 	+ we always bring some number of people home and send one guy up with a roundtrip ticket (see binary counter example about cost to increment)
+
+### Computational Complexity
+https://www.topcoder.com/community/competitive-programming/tutorials/computational-complexity-section-1/
+
+- questions to answer before starting to code: 
+	+ is my algorithm worth implementing?
+	+ will it solve the largest test cases in time?
+	+ if there are other solutions, which should i choose?
+- check the number of records and determine if multiple algorithms should be used >> if it is small enough, run algorithm 1, otherwise run algorithm2
+- usually we are looking for the behaviour of the program in the worst possible case >> what is the worst input with 700 elements? >> how fast does the maximum runtime grow when we increase the input size?
+- an algorithm with runtime proportional to N^2 will always be better than an algorithm with runtime proportional to N^3 on almost all inputs
+- f(N) is O(g(N)), if for some c almost the entire graph of the function f is below the graph of the function >> this means that f grows at most as fast as c.g does
+- f(N) E O(g(N)) >> we do not use "=" to explain this relationship literally as they are not equal, therefore we can us "E" to denote their relationship
+- ^^ defined above is Big O notation and is used to specify upper bounds on function growth
