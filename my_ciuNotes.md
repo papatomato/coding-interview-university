@@ -1,5 +1,14 @@
 # CODING INTERVIEW UNIVERSITY NOTES
-## Big O Notation
+### Big O Notation
+https://www.youtube.com/watch?v=iOq5kSKqeR4
+
+- O(n) >> the time required to count characters in a string is linear
+- len = 1000 (stored number of elements) >> asymptotically constant operation, O(1) >> we already know how many characters
+- binary search runs in O(logN) >> array of size 8 runs in 3 operations (log(base2)8), size 16 in log(base2)16 or 4 operations
+	+ OMEGA is the best case scenario, in the case of binary search, OMEGA would be if the first middle termwas the term we were looking for
+	+ given an array size 3, [1,2,3], if our wanted term is 1 then our program runs in OMEGA(1); if our wanted term is 3, then our program runs in OMEGA(N) (where N represented the length of the array)
+- THETA >> best and worst cases are the same
+
 ### Quick Tutorial Video
 https://www.youtube.com/watch?v=V6mKVRU1evU
 
@@ -60,7 +69,7 @@ https://archive.org/details/ucberkeley_webcast_VIS4YDpuP98
 
 - asymptotic analysis - the study of how algorithms behave as the size of the data grows very large or to infinity
 
-# Big Oh Notation is used to represent upper bounds of a function
+## Big Oh Notation is used to represent upper bounds of a function
 - let n be the size of programs INPUT
 - let T(n) be a function e.g. running time
 - let f(n) be another function, preferable simple
@@ -73,8 +82,8 @@ https://archive.org/details/ucberkeley_webcast_VIS4YDpuP98
 ## Table of Important Big O Sets
 - smallest to largest >>
 ----------------------------------------
-	function   |   common name
-_________________________________________
+	FUNCTION   |   COMMON NAME
+
 	O(1)       |   constant
 	CO(logn)   |   
 	CO
