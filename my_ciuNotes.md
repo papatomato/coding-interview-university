@@ -122,3 +122,38 @@ https://www.topcoder.com/community/competitive-programming/tutorials/computation
 - f(N) is O(g(N)), if for some c almost the entire graph of the function f is below the graph of the function >> this means that f grows at most as fast as c.g does
 - f(N) E O(g(N)) >> we do not use "=" to explain this relationship literally as they are not equal, therefore we can us "E" to denote their relationship
 - ^^ defined above is Big O notation and is used to specify upper bounds on function growth
+## Arrays
+### Arrays (Basic Data Structures)
+https://www.coursera.org/lecture/data-structures/arrays-OsBSF
+
+- contiguous area of memory consisting of equal-size elements indexed by contiguous integers
+- constant time acces to read/write any point in an array >> array_addr + elem_size x (i - first_index)
+--------------------
+TIMES FOR COMMON OPERATIONS
+                | ADD   REMOVE
+Beginning       | O(n)  O(n)
+End             | O(1)  O(1)
+Middle          | O(n)  O(n)
+
+### Linear and Multi-Dim Arrays
+https://archive.org/details/ucberkeley_webcast_Wp8oiO_CZZE
+
+- **LECTURE MOSTLY REFERENCING JAVA**
+- simplest form of LOOP is "while" loop
+
+public static boolean is Prime(int n) {
+        int divisor = 2;
+        while(divisor < n){
+                if (n % divisor == 0){
+                        return false;
+                }
+                divisor++;
+        }
+        return true;
+}
+  - object consisting of a numbered list of variables. Eace is a primitive type or reference
+  - in Java - different data types can be stored in arrays if OBJECT type array is used, cannot be done using primitive data types (char, int...)
+  - in Java - string is considered an OBJECT data type
+  - field "c.length" - length of array >> cannot redefine length with c.length = 7; //compile-time ERROR
+  - multi-dimensional arrays >> an array of references to arrays
+  - PASCAL'S TRIANGLE
