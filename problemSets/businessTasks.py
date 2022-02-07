@@ -9,21 +9,20 @@ class BusinessTasks:
     def __init__(self, tasks, number, count = 0):
         self.tasks = tasks
         self.number = number
-        self.count = count
+        self.count = count    
     
     def getTask(self):
         t = self.tasks
         n = self.number
         c = self.count
         while len(t) > 1:
-            for i in t:
+            for i,k in enumerate(t):
                 c += 1
                 if c == (n):
                     c = 1
-                    t.remove(i)
-                    print('tasks now: ', t)
+                    del t[i]
+                    print('tasks now: ', t,'\n', 'i: ', i)
         return t[0]
-                    
 
 input_string = input('enter your list of strings: ')
 userList = input_string.split()
