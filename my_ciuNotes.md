@@ -157,3 +157,118 @@ public static boolean is Prime(int n) {
   - field "c.length" - length of array >> cannot redefine length with c.length = 7; //compile-time ERROR
   - multi-dimensional arrays >> an array of references to arrays
   - PASCAL'S TRIANGLE
+
+## Linked Lists
+https://archive.org/details/ucberkeley_webcast_htzJdKoEmO0
+
+- linked list >> made up of 'nodes'
+	- nodes >> an item
+		>> a reference to next node in the list
+(JAVA)
+public class ListNode {
+	int item;
+	ListNode next;
+}
+l1 = new ListNode(), l2 = new ListNode(), l3 = new ListNode();
+l1.item = 7;
+l2.item = 0;
+l3.item = 6;
+
+l1.next = l2;
+l2.next = l3;
+l3.next = null;
+- can only refer to an object, not a variable (java)
+- NODE OPERATIONS
+	- public ListNode(int item, ListNode next){
+		this.item = item;
+		this.next = next;
+	}
+	public ListNode(int item){
+		this(item, null)
+	}
+- advantages over array lists:
+	- inserting item into middle of linked list takes constant time IF you have reference to previous node
+	- list can keep growing until memore runs out
+- inserts a new item after 'this':
+	public void insertAfter(int item){
+		next = new ListNode(item,next);
+	}
+	>> "from some other method", call l2.insertAfter(3);
+- disadvantages:
+	- finding the nth item of a linked list takes time proportional to n >> constant-time array lists is an advantage
+
+(finding the nth item in a list:
+
+	public ListNode nth(int position){
+		if (position == 1){
+			return this;
+		} else if ((position < 1) || (next == null)){
+			return null;
+		} else{
+			return next.nth(position - 1);
+		}
+	}
+- LISTS OF OBJECTS
+	- reference any object by declaring reference of type Object (java)
+- A List Class
+	- 2 problems with SListNodes
+		1. x and y pointing to same list >> insert a new item at beginning of list >> x = new SListNode("soap", x); >> x will point to new node but y will point to old node
+		2. how do you represent an empty list? >> if x = null; run-time error if you call a method on a null object,
+	- SOLUTION: separate SList class maintains head of list
+
+## Linked Lists II
+https://archive.org/details/ucberkeley_webcast_-c4I3gFYe3w
+
+- a PRIVATE method or field is invisible & inaccessible to other classes
+	- reasons:
+		1. to prevent data from being corrupted by other classes
+		2. you can improve the implementation without causing other classes to fail
+	"there is an advantage gained from declaring all of your vulnerable parts private" XD
+								- Instructor Jonathan Shewchuk
+- interface of a class: prototypes for public methods, plus descriptions of their behaviors
+- Abstract Data Type(ADT): a class with a well-defined interface, but implementation details are firmly hidden from other classes
+- Invariant: a fact about a data structure that is always true
+	- "A Date object always represents a valid date."
+- not all classes are ADTs! Some classes are just data storage units (no invariants).
+### The SList ADT
+- another advantage of SList class:
+	- SList ADT enforces 2 invariants:
+		1. 'size' is always correct
+		2. list is never circularly linked
+	- both goals accomplished because only SList methods can change the lists
+- SList ensures this:
+	1. the fields of SList (head and size) are 'private'
+	2. no method of SList returns an SList Node.
+### Doubly-Linked Lists
+- inserting/deleting at front of list is easy
+- inserting/deleting at end of list takes a long time
+
+class DListNode{              |          class DList{
+	Object item;          |          	private DListNode head;
+	DListNode next;       |          	private DListNode tail;
+	DListNode prev;       |          }
+}
+
+- insert & delete items at both ends in constant running time
+	- removes the tail node (at least 2 items in DList):
+		tail.prev.next = null;
+		tail = tail.prev;
+- sentinel >> a special node that does not represent an item
+	- DList v.2: circularly linked
+
+class DListNode{              |          class DList{
+	Object item;          |          	private DListNode head;
+	DListNode next;       |          	private int size;
+	DListNode prev;       |          }
+}
+- DList invariants with sentinel:
+	1. For any DList d, d.head != null
+	2. For any DlistNode x, x.next != null
+	3. For any DListNode x, x.prev != null
+	4. For any DListNode x, if x.next == y, then
+	   For any DListNode x, x.prev == x
+	5. For any DListNode x, if x.prev == y, then y.next == x
+	6. A DList's "size" variable is # of DListNodes NOT COUNTING SENTINEL	
+	-Empty Dlist: sentinel's prev & next field point to itself
+	
+
