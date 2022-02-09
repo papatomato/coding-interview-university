@@ -271,4 +271,82 @@ class DListNode{              |          class DList{
 	6. A DList's "size" variable is # of DListNodes NOT COUNTING SENTINEL	
 	-Empty Dlist: sentinel's prev & next field point to itself
 	
+## C Code
+https://www.youtube.com/watch?v=QN6FPiD0Gzo
 
+- 	#include<stdio.h>
+	#include <conio.h>
+	#include<stdlib.h>
+	struct node
+	{
+		int data;
+		struct node *next;
+	};
+	struct node *head;	//head pointer holds the address of the starting node of the linked list;
+	int createlinkedlist()
+	{
+		struct node *newmnode,*temp;
+		newnode = (struct node*)malloc(sizeof(struct node)); //creation of a newnode
+		printf("\n\n\t Enter the data into the linkedlist:- ");
+		scanf("%d",&newnode->data);
+		newnode->next=NULL;
+		if(head == NULL)
+		{
+			head = newnode;
+			return 1;
+		}
+		else
+		{
+			temp = head;
+			while(temp->next!=NULL)
+			{
+				temp = temp->next;
+
+			}
+			temp->next = newnode;
+		}
+	}
+	void display()
+	{
+		node *temp;
+		temp = head;
+		if(head!=NULL)
+		{
+			for(temp = head;temp!=NULL;temp = temp->next)
+			{
+				printf("%d\t",temp->data);
+			}
+		}
+		else
+		{
+			printf("\n\n\t The list is empty....,");
+		}
+	}
+	int main()
+	{
+		int ch;
+		head = NULL;		//tell that the list is empty
+		do
+		{
+		printf("\n\n\t 1.create linkedlist");
+		printf("\n\n\t 2.Display linkedlist");
+		printf("\n\n\t 3.exit");
+		printf("\n\n\t Enter our choice:- ");
+		scanf("%d",&ch);
+		switch(ch)
+		{
+		case 1:
+			createlinkedlist();
+			break;
+		case 2:
+			display();
+			break;
+		case 3:
+			exit(1);
+			break;
+		default:
+			printf("\n\n\t Wrong entry try again....,");
+			break;
+		}
+		}while(ch!=3);
+	}
