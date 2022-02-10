@@ -274,79 +274,118 @@ class DListNode{              |          class DList{
 ## C Code
 https://www.youtube.com/watch?v=QN6FPiD0Gzo
 
-- 	#include<stdio.h>
-	#include <conio.h>
-	#include<stdlib.h>
-	struct node
+#include<stdio.h>
+#include <conio.h>
+#include<stdlib.h>
+struct node
+{
+	int data;
+	struct node *next;
+};
+struct node *head;	//head pointer holds the address of the starting node of the linked list;
+int createlinkedlist()
+{
+	struct node *newmnode,*temp;
+	newnode = (struct node*)malloc(sizeof(struct node)); //creation of a newnode
+	printf("\n\n\t Enter the data into the linkedlist:- ");
+	scanf("%d",&newnode->data);
+	newnode->next=NULL;
+	if(head == NULL)
 	{
-		int data;
-		struct node *next;
-	};
-	struct node *head;	//head pointer holds the address of the starting node of the linked list;
-	int createlinkedlist()
-	{
-		struct node *newmnode,*temp;
-		newnode = (struct node*)malloc(sizeof(struct node)); //creation of a newnode
-		printf("\n\n\t Enter the data into the linkedlist:- ");
-		scanf("%d",&newnode->data);
-		newnode->next=NULL;
-		if(head == NULL)
-		{
-			head = newnode;
-			return 1;
-		}
-		else
-		{
-			temp = head;
-			while(temp->next!=NULL)
-			{
-				temp = temp->next;
-
-			}
-			temp->next = newnode;
-		}
+		head = newnode;
+		return 1;
 	}
-	void display()
+	else
 	{
-		node *temp;
 		temp = head;
-		if(head!=NULL)
+		while(temp->next!=NULL)
 		{
-			for(temp = head;temp!=NULL;temp = temp->next)
-			{
-				printf("%d\t",temp->data);
-			}
+			temp = temp->next;
+
 		}
-		else
-		{
-			printf("\n\n\t The list is empty....,");
-		}
+		temp->next = newnode;
 	}
-	int main()
+}
+void display()
+{
+	node *temp;
+	temp = head;
+	if(head!=NULL)
 	{
-		int ch;
-		head = NULL;		//tell that the list is empty
-		do
+		for(temp = head;temp!=NULL;temp = temp->next)
 		{
-		printf("\n\n\t 1.create linkedlist");
-		printf("\n\n\t 2.Display linkedlist");
-		printf("\n\n\t 3.exit");
-		printf("\n\n\t Enter our choice:- ");
-		scanf("%d",&ch);
-		switch(ch)
-		{
-		case 1:
-			createlinkedlist();
-			break;
-		case 2:
-			display();
-			break;
-		case 3:
-			exit(1);
-			break;
-		default:
-			printf("\n\n\t Wrong entry try again....,");
-			break;
+			printf("%d\t",temp->data);
 		}
-		}while(ch!=3);
 	}
+	else
+	{
+		printf("\n\n\t The list is empty....,");
+	}
+}
+int main()
+{
+	int ch;
+	head = NULL;		//tell that the list is empty
+	do
+	{
+	printf("\n\n\t 1.create linkedlist");
+	printf("\n\n\t 2.Display linkedlist");
+	printf("\n\n\t 3.exit");
+	printf("\n\n\t Enter our choice:- ");
+	scanf("%d",&ch);
+	switch(ch)
+	{
+	case 1:
+		createlinkedlist();
+		break;
+	case 2:
+		display();
+		break;
+	case 3:
+		exit(1);
+		break;
+	default:
+		printf("\n\n\t Wrong entry try again....,");
+		break;
+	}
+	}while(ch!=3);
+}
+
+## Core Linked Lists vs Arrays
+https://www.coursera.org/lecture/data-structures-optimizing-performance/core-linked-lists-vs-arrays-rjBs9
+
+- it takes O(n) to add an element to the front of an ArrayList >> all elements have to shift
+- ArrayList fails in efficiency for fulfilling this task
+- Linked List is a better option
+- Singly Linked List nodes only point to next node >> Doubly Linked List nodes point to prev and next
+- Sentinel (dummy) nodes >> dont store data, exist even when list is empty, live at beginning and end of list, head/tail pointer points to these, not needed but useful
+- O(n) to access an arbitrary location of element within the linked list
+
+## Real World Linked Lists vs Arrays
+https://www.coursera.org/lecture/data-structures-optimizing-performance/in-the-real-world-lists-vs-arrays-QUaUd
+
+- reading an array is constant time
+- have to walk down a list to get to an element O(n)
+- using a list to do a merge sort of lots of data was a "big win"
+
+## Why You Should Avoid Linked Lists
+https://www.youtube.com/watch?v=YQs6IC-vgmo
+
+- using linked lists uses more random accesses vs vectors
+- linked lists have multiple points of data, the data and the 2 pointers, the vectors are more simple and although it has to shift all the data, caches are efficient at managing such operations
+### Vector v List
+- the amount of memory used differ dramatically
+	- list uses 4+ words per element
+		- it will be worse for 64-bit architectures
+		- 100,000 list elements take up 6.4MB or more (but I have Gigabytes!?)
+	- vector uses 1 word per element
+		- 100,000 list elements take up 1.6MB or more
+- memory access is relatively slow
+	- caches, pipelines, etc.
+	- 200 to 500 instructions per memory access
+	- unpredictable memory access gives many more cache misses
+- implications:
+	- don't store data unnecessarily
+	- keep data compact
+	- access memory in a predictable manner
+
