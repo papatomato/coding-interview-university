@@ -389,3 +389,18 @@ https://www.youtube.com/watch?v=YQs6IC-vgmo
 	- keep data compact
 	- access memory in a predictable manner
 
+## Doubly-Linked Lists
+https://www.coursera.org/lecture/data-structures/doubly-linked-lists-jpGKD
+
+- popback O(1)
+- constant time to insert at or remove from the front
+- with tail and doubly-linked, constant time to insert at or remove from the back
+- O(n) time to find arbitrary element
+- list elements need not be contiguous
+- with doubly-linked list, constant time to insert between nodes or remove a node
+
+## BONUS CONTENT: new vs malloc
+https://www.youtube.com/watch?v=HcnAeK5q5IA
+
+- malloc >> "memory-allocation"
+- 
