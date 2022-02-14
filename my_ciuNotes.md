@@ -399,8 +399,3 @@ https://www.coursera.org/lecture/data-structures/doubly-linked-lists-jpGKD
 - list elements need not be contiguous
 - with doubly-linked list, constant time to insert between nodes or remove a node
 
-## BONUS CONTENT: new vs malloc
-https://www.youtube.com/watch?v=HcnAeK5q5IA
-
-- malloc >> "memory-allocation"
-- 
