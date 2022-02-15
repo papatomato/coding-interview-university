@@ -399,3 +399,15 @@ https://www.coursera.org/lecture/data-structures/doubly-linked-lists-jpGKD
 - list elements need not be contiguous
 - with doubly-linked list, constant time to insert between nodes or remove a node
 
+## Stacks
+https://www.coursera.org/lecture/data-structures/stacks-UdKzQ
+
+- think of the operations can be done with a stack of books
+- push an opening paren/bracket onto the stack and check if the next in line will be closing, if not then you dont have a balanced set of parens/brackets
+- Push(x) >> appending O(1)
+- Top() >> the top element will be the same as n elements >> a, b, two elements b will be the top
+- Pop() >> pulls off the top >> a, b, pop(b) leaves only a
+- for a linked list >> pop becomes popFront, top is topFront >> HEAD, d, c, b, a
+- stacks can be implemented with either an array or a linked list
+- each stack operation is O(1): Push, Pop, Top, Empty
+- stacks are occassionaly known as LIFO queus (Last In First Out)
