@@ -411,3 +411,14 @@ https://www.coursera.org/lecture/data-structures/stacks-UdKzQ
 - stacks can be implemented with either an array or a linked list
 - each stack operation is O(1): Push, Pop, Top, Empty
 - stacks are occassionaly known as LIFO queus (Last In First Out)
+
+## Queues
+https://www.coursera.org/lecture/data-structures/queues-EShpq
+
+- abstract data type with the following operations:
+	- enqueue(key): adds key to collection
+	- key dequeue(): removes and returns least recently-added key
+- FIFO: First-in, First-out
+- queues can be implemented with either a linked list (with tail pointer) or an array
+- each queue operation is O(1): engueue, dequeue, empty
+
